@@ -1,0 +1,140 @@
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.button {
+	border-radius: $button--radius;
+	border: 0;
+	color: $text--color;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: bold;
+	font-size:$button--font__size;
+	height: $input--height;
+	line-height: $input--height;
+	padding: 0 2.25em;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	background-color: $accent;
+	color: $white;
+
+	&:hover {
+		background-color: lighten($accent, 5);
+	}
+
+	&:active {
+		background-color: $accent;
+		box-shadow: inset 1px 1px 2px rgba(0,0,0,0.25);
+	}
+
+	&:hover, &:active, &:focus {
+		color: $white !important;
+		text-decoration:none;
+	}
+
+	&:focus {
+		outline:none;
+	}
+
+
+	&.icon {
+		&:before {
+			margin-right: 0.5em;
+		}
+	}
+
+	&.fit {
+		display: block;
+		margin: 0 0 ($size-element-margin * 0.5) 0;
+		width: 100%;
+	}
+
+	&.small {
+		font-size: 0.8em;
+		height: 40px;
+		padding: 0 2em;
+  		line-height: 2.7em;
+	}
+
+	&.tiny {
+		font-size:0.65em;
+		height:30px;
+		line-height:2.4em;
+		padding: 0 1em;
+	}
+
+	&.big {
+		font-size: 1.35em;
+	}
+
+	&.marketing {
+		font-size: 1em;
+		height: $input--height * .8;
+		line-height: $input--height * .8;
+	}
+
+	&.disabled,
+	&:disabled {
+		background-color: $input--border;
+		box-shadow: none !important;
+		color: $white !important;
+		cursor: default;
+		opacity: 0.25;
+	}
+
+	&.ghost,
+	&.secondary {
+		background-color:transparent;
+		box-shadow:none;
+		border:1px solid white;
+
+		&:hover {
+			background:$black;
+		}
+	}
+
+	&.error,
+	&.danger {
+		background:$brand-danger;
+
+		&:hover {
+			background:lighten($brand-danger,5);
+		}
+
+		&:active {
+			color:white;
+			background:darken($brand-danger,10);
+		}
+	}
+
+
+	&.success {
+		background:$brand-success;
+
+		&:hover {
+			background:lighten($brand-success,5);
+		}
+
+		&:active {
+			color:white;
+			background:darken($brand-success,10);
+		}
+	}
+}
+
+// waiting icon in a button
+.btn-spin {
+	position:relative;
+	@include icon();
+	@include transition(opacity .25s ease);
+	padding:0 20px 0 35px;
+	color:transparentize(white,0.5);
+
+	&:before {
+		position:absolute;
+		left:12px;
+		content:'\f110';
+		@extend .cgc-icon-spin;
+	}
+
+}

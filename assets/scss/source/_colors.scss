@@ -1,0 +1,34 @@
+// FRONT
+.page-template-template-sculpting {
+
+	.page--section__hero .page--section__hero-title:before,
+	.module--track__free .module--track__ornament,
+	.button:not(.ghost) {
+		background:$color--pink;
+	}
+
+	.module--track__free .module--track__inner {
+		border-color:$color--pink
+	}
+}
+
+//////////////
+// COLORS
+//////////////
+
+.division-concept,
+.concept {
+	@include division-colors($color--concept);
+}
+.division-blender,
+.blender {
+	@include division-colors($color--blender);
+}
+.division-unity,
+.unity {
+	@include division-colors($color--unity);
+}
+.division-sculpting,
+.sculpting {
+	@include division-colors($color--sculpt);
+}

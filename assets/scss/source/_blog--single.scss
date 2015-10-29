@@ -1,0 +1,147 @@
+// some videos aren't in the proper aspect ratio so we have to force a new one
+// https://github.com/CGCookie/cgcookie-5.0/issues/447
+// https://github.com/CGCookie/cgcookie-5.0/issues/466
+.postid-161939 {
+	.videoWrapper--wideScreen {
+    	padding-bottom: 73.25% !important;
+	}
+}
+.postid-163200 {
+	.videoWrapper--wideScreen {
+   	 	padding-bottom: 61.25% !important;
+	}
+}
+
+.btb-link {
+	color: $white;
+	display: block;
+	font-size: $font-size-small;
+	margin: 40px 0 $padding;
+}
+
+.entry-header {
+	@include clearfix();
+	margin-top:$padding--lg;
+
+	.entry--author__avatar {
+		float:left;
+		margin-bottom:$padding;
+		font-size:$font-size-small;
+	}
+
+	.avatar {
+		float:left;
+		margin-right:5px;
+		@include avatar($gray, $avatar--width, 2px);
+	}
+
+	.entry--title {
+		clear:left;
+
+	}
+
+	.entry-date {
+		overflow:hidden;
+		margin-top:-4px;
+	}
+}
+
+.entry--content {
+	padding:$padding;
+	background:$base2;
+}
+
+.entry-footer {
+	margin:$padding--lg auto;
+	padding-bottom:75px;
+	min-height:90px;
+	border-bottom:1px solid $gray;
+
+	.entry--author__avatar {
+		float:left;
+		margin-bottom:$padding;
+		font-size:$font-size-small;
+	}
+
+	.entry--author__detail {
+		overflow:hidden;
+		padding-top:$padding--sm + 10;
+	}
+
+	.avatar {
+		float:left;
+		margin-right:$padding;
+		@include avatar($base2, $avatar--width * 2, 6px);
+	}
+
+	.entry--title {
+		clear:left;
+
+	}
+
+	.entry-date {
+		overflow:hidden;
+		margin-top:-4px;
+	}
+
+	.entry-author-details {
+		
+		p {
+			font-weight:700;
+			margin:0;
+		}
+	}
+
+	.entry-author-twitter {
+		font-size:$font-size-small;
+		margin-top:-4px;
+		display:block;
+		a{
+			color:inherit;
+		}
+	}
+
+	a:hover {
+		text-decoration:none;
+	}
+}
+
+.post--navigation {
+	padding:0 30px;
+	margin:$padding auto;
+	@include clearfix();
+	a {
+		background:$base3;
+		padding:$padding--sm $padding;
+		color:white;
+		@include shadow();
+
+		&:hover,
+		&:active {
+			background:$accent;
+			text-decoration:none;
+		}
+	}
+}
+
+// editor styles
+.cgc-editor-styles {
+
+	p { margin:0; }
+	position:relative;
+
+	&.cgc-editor-styles--note {
+		padding:$padding $padding $padding $padding--lg * 1.5;
+		background:$base3;
+		margin-bottom:$padding;
+		@include icon($fa-var-info-circle);
+
+		&:before {
+			position:absolute;
+			left:$padding;
+			top:$padding;
+			color:$icon--color;
+			font-size:$icon--large;
+		}
+	}
+}

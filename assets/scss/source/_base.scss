@@ -1,0 +1,73 @@
+*, *:before, *:after { box-sizing:border-box; }
+html {
+	font-size: $font-size-base;
+}
+body {
+	font-family: $body--font;
+	font-weight: $body--font__weight;
+	font-style: $body--font__style;
+	line-height: $line-height-base;
+	color: $text--color;
+	position: relative;
+	background: $body--bg;
+	padding:0;
+	margin:0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	padding-top:$header--height;
+}
+
+// images
+img {
+	max-width:100%;
+	height:auto;
+}
+
+// master width
+.content-width,
+.content-width--small {
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	padding-left:$padding;
+	padding-right:$padding;
+}
+
+.content-width {
+	max-width:$width;
+}
+
+.content-width--small {
+	max-width:$width--small;
+	margin: 0 auto;
+}
+
+.not-visible {
+	@include not-visible();
+}
+
+.visible {
+	@include opacity(1);
+	display:inline-block;
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: $padding;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: $padding;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

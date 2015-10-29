@@ -1,0 +1,421 @@
+// paragraph
+p {
+	font-weight: $body--font__weight;
+	margin-bottom: $base-line-height * 1;
+}
+
+b,
+strong {
+	font-weight:700;
+}
+
+i,em {
+	font-style:italic;
+}
+
+
+.text--small {
+	font-size:$font-size-small;
+	line-height:$font-size-small + 0.2;
+}
+
+// links
+a {
+    color: $accent;
+    text-decoration: none;
+    @include hyphens();
+    &:hover,
+    &:focus {
+        color: $accent;
+        text-decoration: underline;
+    }
+
+    &:focus {
+        outline:none;
+    }
+}
+
+.entry-content a {
+	font-weight:400;
+}
+
+h1, h2, h3, h4, h5 {
+	@include bebas();
+	font-style: normal;
+	color: $font--head__color;
+	text-rendering: optimizeLegibility;
+	font-weight:400;
+	line-height: 1;
+	margin: ($base-line-height / 2)  0;
+	small { font-size: 60%; color: lighten($font--head__color, 30%); line-height: 0; }
+}
+
+h6 {
+	font-style:bold;
+	color:$font--head__color;
+	font-weight:bold;
+	line-height:1;
+	margin: ($base-line-height / 2)  0;
+}
+
+h1 { font-size:$font-size-h1; }
+h2 { font-size:$font-size-h2; }
+h3 { font-size:$font-size-h3; }
+h4 { font-size:$font-size-h4; }
+h5 { font-size:$font-size-h5; }
+h6 { font-size:$font-size-h6; }
+
+h4 {
+	margin:0 auto;
+}
+h4 + p {
+	margin:0;
+	font-size:$font-size-small;
+}
+
+/* Blockquotes ---------------------- */
+blockquote {
+			border-left: solid 4px $accent;
+		font-style: italic;
+		margin: 0 0 $size-element-margin 0;
+		padding: 0.5em 0 0.5em 2em;
+}
+
+sub {
+	font-size: 0.8em;
+	position: relative;
+	top: 0.5em;
+}
+
+sup {
+	font-size: 0.8em;
+	position: relative;
+	top: -0.5em;
+}
+
+hr {
+	border: 0;
+	border-bottom: solid 1px $accent;
+
+	// This is the *only* instance where we need to rely on margin collapse.
+	margin: ($size-element-margin * 1.5) 0;
+
+	&.major {
+		margin: ($size-element-margin * 2) 0;
+	}
+}
+
+blockquote {
+	border-left: solid 4px $accent;
+	font-style: italic;
+	margin: 0 0 $size-element-margin 0;
+	padding: 0.5em 0 0.5em 2em;
+}
+
+code {
+	background: $accent;
+	border-radius: 3px;
+	font-family: $font--mono;
+	font-size: 0.9em;
+	margin: 0 0.25em;
+	padding: 0.25em 0.65em;
+}
+
+pre {
+	-webkit-overflow-scrolling: touch;
+	font-family: $font--mono;
+	font-size: 0.9em;
+	margin: 0 0 $size-element-margin 0;
+
+	code {
+		display: block;
+		line-height: 1.75em;
+		padding: 1em 1.5em;
+		overflow-x: auto;
+	}
+}
+
+ol {
+	list-style: decimal;
+	margin: 0 0 $size-element-margin 0;
+	padding-left: 1.25em;
+
+	li {
+		padding-left: 0.25em;
+	}
+}
+
+ul {
+	list-style: disc;
+	margin: 0 0 $size-element-margin 0;
+	padding-left: 1em;
+
+	li {
+		padding-left: 0.5em;
+	}
+
+	&.alt {
+		list-style: none;
+		padding-left: 0;
+
+		li {
+			border-top: solid 1px $accent;
+			padding: 0.5em 0;
+
+			&:first-child {
+				border-top: 0;
+				padding-top: 0;
+			}
+		}
+	}
+
+	&.icons {
+		cursor: default;
+		list-style: none;
+		padding-left: 0;
+
+		li {
+			display: inline-block;
+			height: 2.5em;
+			line-height: 2.5em;
+			padding: 0 0.5em;
+
+			.icon {
+				font-size: 0.8em;
+
+				&:before {
+					font-size: 2em;
+				}
+			}
+		}
+	}
+
+	&.actions {
+		cursor: default;
+		list-style: none;
+		padding-left: 0;
+
+		li {
+			display: inline-block;
+			padding: 0 ($size-element-margin * 0.5) 0 0;
+			vertical-align: middle;
+
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+
+		&.small {
+			li {
+				padding: 0 ($size-element-margin * 0.25) 0 0;
+			}
+		}
+
+		&.vertical {
+			li {
+				display: block;
+				padding: ($size-element-margin * 0.5) 0 0 0;
+
+				&:first-child {
+					padding-top: 0;
+				}
+
+				> * {
+					margin-bottom: 0;
+				}
+			}
+
+			&.small {
+				li {
+					padding: ($size-element-margin * 0.25) 0 0 0;
+
+					&:first-child {
+						padding-top: 0;
+					}
+				}
+			}
+		}
+
+		&.fit {
+			display: table;
+			margin-left: ($size-element-margin * -0.5);
+			padding: 0;
+			table-layout: fixed;
+			width: calc(100% + #{($size-element-margin * 0.5)});
+
+			li {
+				display: table-cell;
+				padding: 0 0 0 ($size-element-margin * 0.5);
+
+				> * {
+					margin-bottom: 0;
+				}
+			}
+
+			&.small {
+				margin-left: ($size-element-margin * -0.25);
+				width: calc(100% + #{($size-element-margin * 0.25)});
+
+				li {
+					padding: 0 0 0 ($size-element-margin * 0.25);
+				}
+			}
+		}
+	}
+}
+
+dl {
+	margin: 0 0 $size-element-margin 0;
+}
+
+
+
+
+
+// Baseline styles
+table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 2rem;
+	background-color: $table-bg;
+	border: 1px solid $table-border-color;
+	  // Cells
+	> thead,
+	> tbody,
+	> tfoot {
+	    > tr {
+	      	> th,
+	      	> td {
+	        	padding: $table-cell-padding;
+	        	line-height: $line-height-base;
+	        	vertical-align: top;
+	        	border: 1px solid $table-border-color;
+	        	font-size:$font-size-small;
+	      	}
+	    }
+	}
+	> tbody > tr:nth-of-type(odd) {
+	    background-color: $table-bg-accent;
+	}
+	> tbody > tr:hover {
+	    background-color: $table-bg-hover;
+	}
+	// Bottom align for column headings
+	> thead > tr > th {
+	    vertical-align: bottom;
+	    border-bottom: 2px solid $table-border-color;
+	}
+	  // Remove top border from thead by default
+	> caption + thead,
+	> colgroup + thead,
+	> thead:first-child {
+	    > tr:first-child {
+	      	> th,
+	      	> td {
+	        	border-top: 0;
+	      	}
+	    }
+	}
+	// Account for multiple tbody instances
+	> tbody + tbody {
+	    border-top: 2px solid $table-border-color;
+	}
+
+	// Nesting
+	table {
+	    background-color: $body--bg;
+	}
+	th {
+	  	text-align: left;
+	}
+}
+
+table col[class*="col-"] {
+  position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
+  float: none;
+  display: table-column;
+}
+table {
+  	td,
+  	th {
+    	&[class*="col-"] {
+      		position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
+      		float: none;
+      		display: table-cell;
+    	}
+  	}
+}
+
+table {
+  	overflow-x: auto;
+  	min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
+
+  	@media screen and (max-width: 600px) {
+    	width: 100%;
+    	margin-bottom: 2em;
+    	overflow-y: hidden;
+       -ms-overflow-style: -ms-autohiding-scrollbar;
+    	border: 1px solid $table-border-color;
+
+	    // Tighten up spacing
+	    > .table {
+	      margin-bottom: 0;
+
+	      // Ensure the content doesn't wrap
+	      	> thead,
+	      	> tbody,
+	      	> tfoot {
+	        	> tr {
+	          		> th,
+	          		> td {
+	           			white-space: nowrap;
+	          		}
+	        	}
+	      	}
+	    }
+
+	    // Special overrides for the bordered tables
+	    > .table-bordered {
+	      border: 0;
+
+	      // Nuke the appropriate borders so that the parent can handle them
+	      	> thead,
+	      	> tbody,
+	      	> tfoot {
+	        	> tr {
+	          		> th:first-child,
+	          		> td:first-child {
+	            		border-left: 0;
+	          		}
+	          		> th:last-child,
+	          		> td:last-child {
+	            		border-right: 0;
+	          		}
+	        	}
+	      	}
+
+		    // Only nuke the last row's bottom-border in `tbody` and `tfoot` since
+		    // chances are there will be only one `tr` in a `thead` and that would
+		    // remove the border altogether.
+		    > tbody,
+		    > tfoot {
+		        > tr:last-child {
+		          	> th,
+		          	> td {
+		            	border-bottom: 0;
+		          	}
+		        }
+		    }
+	    }
+	}
+}
+
+
+.screen-reader-text {
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}

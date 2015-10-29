@@ -1,0 +1,34 @@
+.post-type-archive-cgc_archive {
+
+	#wpls--post-list {
+		background: $base;
+		padding: $padding;
+
+		&.wpls--empty {
+			padding: 0;
+		}
+
+		li {
+			background:$base3!important;
+			margin:0 auto $padding--sm;
+			padding-left: $padding;
+
+			&:hover {
+				background: darken($base3, 5%)!important;
+			}
+
+			h4 {
+				font-weight: 300;
+			}
+
+		}
+
+		.module--track__center {
+			text-align: left;
+		}
+	}
+
+	.attachment-post-wrap {
+		display: none;
+	}
+}

@@ -1,0 +1,181 @@
+// page section her used for blog top
+.page--section__hero-blog {
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	height:275px;
+	overflow:hidden;
+	position:relative;
+	display:table;
+	width:100%;
+	margin-bottom:$padding--lg;
+
+	.page--section__hero-blog__inner {
+		@extend .content-width;
+		position:relative;
+		z-index:1;
+		display:table-cell;
+		vertical-align:middle;
+		text-align:center;
+		width:100%;
+		height:100%;
+		padding:0 $padding;
+	}
+
+	.page--section__hero-img {
+		position:absolute;
+		left:0;
+		top:0;
+		width:100%;
+		height:100%;
+		background-size:cover;
+		background-position:center center;
+		z-index:0;
+
+		&:after {
+			content:'';
+			position:absolute;
+			width:100%;
+			height:100%;
+			top:0;
+			left:0;
+			background:transparentize(black,.5);
+		}
+	}
+
+	.page--section__hero-blog-title {
+		margin:0 auto 5px;
+
+	}
+
+	.page-section__hero-blog-meta {
+		font-size:$font-size-small;
+		a {
+			color:inherit;
+			margin:0 10px;
+
+			i {
+				margin-right:4px;
+			}
+		}
+	}
+
+	&.updates-hero {
+		height:auto;
+
+		.hero-blog-info {
+			margin-bottom:0;
+		}
+	}
+
+}
+
+.page--header {
+	text-align:center;
+	margin:$padding--lg auto;
+
+	h1 {
+		font-size:$font-size-h3;
+		font-family: $body--font;
+		font-weight: 700;
+		margin-top:0;
+		text-transform:none;
+	}
+
+	p {
+		margin:0;
+	}
+}
+
+.site-update {
+	padding:$padding;
+	background: $base;
+	width:100%;
+	position:relative;
+	@include shadow();
+}
+
+
+.updates--archive,
+.blog--archive {
+	@include clearfix();
+	overflow: auto;
+
+	.cgc_updates,
+	.post {
+		float: left;
+		position: relative;
+		min-height: 1px;
+		padding: 0 10px;
+		width: 33.33333%;
+		margin-bottom:$padding;
+	}
+
+	.has-post-thumbnail {
+		.entry {
+			margin-top:62%;
+			font-size:$font-size-small + 0.2;
+		}
+	}
+
+	.post--inner {
+		padding:$padding;
+		background: $base;
+		width:100%;
+		position:relative;
+		@include shadow();
+	}
+	.post--thumb {
+		height:0;
+		padding-bottom:62%;
+		background-size:cover;
+		background-position:center center;
+		width:100%;
+		position:absolute;
+		left:0;
+		top:0;
+	}
+
+	.entry {
+		font-size:$font-size-small + 0.2;
+	}
+
+	.entry--title {
+		font-size: $font-size-h3;
+		margin: 0 auto $padding--sm;
+
+		a {
+			color: $white;
+		}
+	}
+
+	.entry-header {
+		margin-top:0;
+	}
+
+	.entry--content {
+		line-height:1.1;
+		padding-left:0;
+		padding-right:0;
+	}
+
+	.entry-meta {
+		font-size: $font-size-small;
+
+		p {
+			margin:0;
+		}
+	}
+
+}
+
+// author archive
+.archive.author {
+	padding-top:100px;
+
+	.posts-by {
+		text-align:center;
+		display:block;
+		font-weight:700;
+	}
+}

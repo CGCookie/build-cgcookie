@@ -1,0 +1,33 @@
+.notfound--header {
+	text-align:center;
+	@include clearfix();
+
+	img {
+		max-width:260px;
+		float:left;
+	}
+
+	h2,p {
+		margin:0;
+	}
+	h2 {margin-top:$padding--lg + $padding;}
+	p {font-weight:700;}
+}
+
+.notfound--search {
+	margin:$padding--lg 0 $padding--lg + $padding;
+
+	#searchform {
+		position:relative;
+	}
+
+	input[type="text"] {
+		height:3.4em;
+	}
+
+	input[type="submit"] {
+		position:absolute;
+		top:0;
+		right:0;
+	}
+}

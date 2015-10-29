@@ -1,0 +1,136 @@
+#comments{
+
+	width:100%;
+
+	.page .commentlist {
+	 float: none;
+	}
+
+	#discussion {
+	    margin-bottom: 0;
+	}
+	ol.commentlist {
+	    margin: $padding 0 0 5%;
+	    padding: 0;
+	    list-style: none;
+	}
+	ol.commentlist li{
+	    position: relative;
+	    list-style:none;
+	    @include clearfix();
+	    margin-bottom:$padding--sm;
+	    #respond {
+	        margin-left: 60px;
+	        margin-top: 30px;
+	    }
+	    &.last, &.depth-1.parent {
+	        &:after {
+	            content: '';
+	            width: 10px;
+	            height: 10px;
+	            background: $base3;
+	            position: absolute;
+	            left: -6px;
+	            bottom: -6px;
+	        }
+	    }
+	    &.parent {
+	        padding-bottom: 30px;
+	    }
+	    ul.children {
+	        margin-left: 10%;
+	        padding-left: 15px;
+	    }
+	}
+	.depth-1.parent {
+	    margin-top: 60px;
+	    padding-top: 0;
+	    li {
+	        margin-top: 0;
+	        padding-top: 30px;
+	        border-top: none;
+	    }
+	}
+	.depth-1.parent, .depth-1.parent li {
+	    border-left: 2px solid $base2;
+	}
+
+	.depth-2 + .depth-2 {
+	    margin-top: 0;
+	    padding-top: 30px;
+	}
+
+	.comment.depth-1 {
+	    > .comment-body {
+	        padding-bottom: 15px;
+	    }
+	}
+	article.comment {
+	    margin-left: -5%;
+	    @include clearfix();
+	}
+	.comment-author{
+	    float:left;
+	    width: 10%;
+	    position:relative;
+
+	}
+
+	.comment-author-name {
+	    font-size: 13px;
+	    font-weight: bold;
+	    margin-bottom: 10px;
+	    @include opacity(.8);
+	}
+	.comment-content{
+	    position:relative;
+	    width: 90%;
+	    float: left;
+	    padding-left: 15px;
+	}
+	.comment-text {
+	    background: $base3;
+	    padding: 15px;
+	}
+
+	.comment-text p {
+	    margin-bottom: 15px;
+	}
+
+	.comment-meta {
+	    font-size: 12px;
+	    //font-family: $headerFontFamily;
+	    //color: darken($txtColor,10%);
+	}
+
+	.submit-comment {
+	    display: inline;
+	}
+
+	a#cancel-comment-reply-link {
+	    color: $red;
+	    display: inline;
+	    font-weight: bold;
+	    margin-left: 10px;
+	}
+
+	.user-badge{display:none; position:absolute; top:-2px; left:-2px; height:50px; width:50px; background:url('../img/badges.png')}
+	.citizen-member.user-badge{display:block; background-position:0 0}
+	.admin.user-badge{display:block; background-position:0 -100px}
+	.bypostauthor > article > div > .user-badge{display:block; background-position:0 -50px!important}
+
+	.author-count{font-size:11px; text-align: center; background: $base1;}
+
+	.comment-reply{
+	    position:absolute;
+	    bottom:15px;
+	    right:15px;
+	    font-weight: bold;
+	}
+
+	/*leave comment form*/
+	#respond-wrap{margin:40px 0 0}
+	.cancel-comment-reply{padding:5px 0}
+	.subscribe-to-comments #subscribe{float:left; margin-top:2px}
+	.comment-subscription-form input { float: left; }
+}
