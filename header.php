@@ -27,4 +27,13 @@
 		<?php wp_head(); ?>
 
 		<body <?php body_class(); ?>>
-			<main class="content-width dashboard--main">
+
+			<?php
+			if ( is_home() ) {
+				$class = 'blog--archive';
+			} else {
+				$class = 'blog--single';
+			}
+			?>
+
+			<main class="content-width--small <?php echo $class;?>">

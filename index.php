@@ -1,29 +1,19 @@
 <?php
 
-	get_header();
+get_header();
 
-	?>
+	if ( have_posts() ) :
 
-	<main class="content-width blog--archive">
+		while ( have_posts() ) : the_post();
 
-		<?php
+			get_template_part('partials/archive-post');
 
-		if ( have_posts() ) :
+		endwhile;
 
-			while ( have_posts() ) : the_post();
+	else :
 
-				the_title();
+		//get_template_part( 'content', 'none' );
 
-			endwhile;
+	endif;
 
-		else :
-
-			//get_template_part( 'content', 'none' );
-
-		endif;
-
-		?>
-
-	</main>
-
-<?php get_footer(); ?>
+get_footer();

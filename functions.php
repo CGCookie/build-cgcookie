@@ -17,6 +17,9 @@ class buildCGCookie {
 
 		add_action('after_setup_theme',		array($this,'theme_setup'));
 
+		add_action('wp_enqueue_scripts',	array($this,'styles'));
+		add_action( 'wp_head', 				array($this,'typekit'));
+
 	}
 
 	/**
@@ -48,7 +51,19 @@ class buildCGCookie {
 
 	function styles(){
 
+		wp_enqueue_style('cgc5--build__style', get_stylesheet_directory_uri().'/assets/css/style.css', CGC_BUILD_THEME_VERSION, true);
 
+	}
+
+	/**
+	*	Load Typekit
+	*	@since 5.0
+	*/
+	function typekit(){
+		?>
+		<script src="//use.typekit.net/nxp8kyf.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
+		<?php
 	}
 }
 new buildCGCookie;
