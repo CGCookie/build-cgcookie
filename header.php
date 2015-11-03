@@ -26,6 +26,5 @@
 		<meta name="theme-color" content="#ffffff">
 		<?php wp_head(); ?>
 
-
 		<body <?php body_class(); ?>>
 			<main class="content-width dashboard--main">

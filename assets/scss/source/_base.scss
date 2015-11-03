@@ -54,6 +54,10 @@ img {
 	display:inline-block;
 }
 
+img[class*='wp-image-'] {
+	@include shadow();
+}
+
 .alignleft {
 	display: inline;
 	float: left;
