@@ -20,6 +20,8 @@ class buildCGCookie {
 		add_action('wp_enqueue_scripts',	array($this,'styles'));
 		add_action( 'wp_head', 				array($this,'typekit'));
 
+		require_once(CGC_BUILD_THEME_DIR.'/inc/theme-functions.php');
+
 	}
 
 	/**

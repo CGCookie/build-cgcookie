@@ -1,17 +1,6 @@
-// some videos aren't in the proper aspect ratio so we have to force a new one
-// https://github.com/CGCookie/cgcookie-5.0/issues/447
-// https://github.com/CGCookie/cgcookie-5.0/issues/466
-.postid-161939 {
-	.videoWrapper--wideScreen {
-    	padding-bottom: 73.25% !important;
-	}
+.avatar {
+	@include avatar($gray, $avatar--width + 10, 2px);
 }
-.postid-163200 {
-	.videoWrapper--wideScreen {
-   	 	padding-bottom: 61.25% !important;
-	}
-}
-
 .btb-link {
 	color: $white;
 	display: block;
@@ -32,7 +21,6 @@
 	.avatar {
 		float:left;
 		margin-right:5px;
-		@include avatar($gray, $avatar--width, 2px);
 	}
 
 	.entry--title {

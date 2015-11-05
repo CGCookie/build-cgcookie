@@ -1,50 +1,7 @@
-.footer--wrap {
-	background:$header--bg;
-	position:relative;
-}
-
-.footer--inner {
-	@include clearfix();
-	text-align:center;
-	min-height:200px;
-	max-width:700px;
-	margin:0 auto;
-	padding-top:$padding * 2;
-	padding-bottom:$padding * 2;
-
+.site-footer{
 	p {
-		&:first-child {
-			margin-bottom:$padding * 2;
-		}
-	}
-
-	.module--brand {
-
-		width:205px;
-		margin:0 auto;
-
-		+ p {
-			margin:0;
-			font-size:$font-size-small;
-			line-height:$font-size-small;
-			margin:5px auto 0;
-
-			+ p {
-				font-size:$font-size-small;
-			}
-		}
-	}
-
-	a {
-		color:inherit;
-		font-weight:bold;
-	}
-}
-
-.cgc-padding-reset {
-
-	.footer--wrap {
-		background: $black;
-		margin-top: 40px;
+		text-align:center;
+		@include small-text();
+		margin:$padding--lg auto;
 	}
 }

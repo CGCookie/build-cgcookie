@@ -114,7 +114,7 @@
 	    margin-left: 10px;
 	}
 
-	.user-badge{display:none; position:absolute; top:-2px; left:-2px; height:50px; width:50px; background:url('../img/badges.png')}
+	//.user-badge{display:none; position:absolute; top:-2px; left:-2px; height:50px; width:50px; background:url('../img/badges.png')}
 	.citizen-member.user-badge{display:block; background-position:0 0}
 	.admin.user-badge{display:block; background-position:0 -100px}
 	.bypostauthor > article > div > .user-badge{display:block; background-position:0 -50px!important}
@@ -133,4 +133,8 @@
 	.cancel-comment-reply{padding:5px 0}
 	.subscribe-to-comments #subscribe{float:left; margin-top:2px}
 	.comment-subscription-form input { float: left; }
+
+	#leave-comment {
+		float:right;
+	}
 }
