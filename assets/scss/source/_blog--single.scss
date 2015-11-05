@@ -58,44 +58,28 @@
 	border-bottom:1px solid $gray;
 
 	.entry--author__avatar {
-		float:left;
-		margin-bottom:$padding;
 		font-size:$font-size-small;
-	}
-
-	.entry--author__detail {
-		overflow:hidden;
-		padding-top:$padding--sm + 10;
 	}
 
 	.avatar {
 		float:left;
 		margin-right:$padding;
-		@include avatar($base2, $avatar--width * 2, 6px);
+		@include avatar($base2, $avatar--width * 2, 4px);
 	}
 
 	.entry--title {
 		clear:left;
 
 	}
-
-	.entry-date {
+	.entry--author__details {
 		overflow:hidden;
-		margin-top:-4px;
-	}
-
-	.entry-author-details {
-		
-		p {
-			font-weight:700;
-			margin:0;
-		}
+		margin:0;
 	}
 
 	.entry-author-twitter {
 		font-size:$font-size-small;
-		margin-top:-4px;
 		display:block;
+		line-height:1.1;
 		a{
 			color:inherit;
 		}
@@ -110,6 +94,7 @@
 	padding:0 30px;
 	margin:$padding auto;
 	@include clearfix();
+	clear:left;
 	a {
 		background:$base3;
 		padding:$padding--sm $padding;

@@ -29,11 +29,19 @@
 		<body <?php body_class(); ?>>
 
 			<?php
-			if ( is_home() ) {
+			if ( is_home() || is_author() ) {
 				$class = 'blog--archive';
 			} else {
 				$class = 'blog--single';
 			}
 			?>
+
+			<header class="content-width--small">
+
+				<h1>
+					<a href="<?php echo site_url();?>"><img class="logo" src="<?php echo CGC_BUILD_THEME_URL.'/assets/img/logo.png';?>"></a>
+					<span><?php echo get_bloginfo('name');?></span>
+				</h1>
+			</header>
 
 			<main class="content-width--small <?php echo $class;?>">

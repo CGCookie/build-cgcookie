@@ -1,101 +1,3 @@
-// page section her used for blog top
-.page--section__hero-blog {
-	background-size: cover;
-	background-position: center top;
-	background-repeat: no-repeat;
-	height:275px;
-	overflow:hidden;
-	position:relative;
-	display:table;
-	width:100%;
-	margin-bottom:$padding--lg;
-
-	.page--section__hero-blog__inner {
-		@extend .content-width;
-		position:relative;
-		z-index:1;
-		display:table-cell;
-		vertical-align:middle;
-		text-align:center;
-		width:100%;
-		height:100%;
-		padding:0 $padding;
-	}
-
-	.page--section__hero-img {
-		position:absolute;
-		left:0;
-		top:0;
-		width:100%;
-		height:100%;
-		background-size:cover;
-		background-position:center center;
-		z-index:0;
-
-		&:after {
-			content:'';
-			position:absolute;
-			width:100%;
-			height:100%;
-			top:0;
-			left:0;
-			background:transparentize(black,.5);
-		}
-	}
-
-	.page--section__hero-blog-title {
-		margin:0 auto 5px;
-
-	}
-
-	.page-section__hero-blog-meta {
-		font-size:$font-size-small;
-		a {
-			color:inherit;
-			margin:0 10px;
-
-			i {
-				margin-right:4px;
-			}
-		}
-	}
-
-	&.updates-hero {
-		height:auto;
-
-		.hero-blog-info {
-			margin-bottom:0;
-		}
-	}
-
-}
-
-.page--header {
-	text-align:center;
-	margin:$padding--lg auto;
-
-	h1 {
-		font-size:$font-size-h3;
-		font-family: $body--font;
-		font-weight: 700;
-		margin-top:0;
-		text-transform:none;
-	}
-
-	p {
-		margin:0;
-	}
-}
-
-.site-update {
-	padding:$padding;
-	background: $base;
-	width:100%;
-	position:relative;
-	@include shadow();
-}
-
-
 .updates--archive,
 .blog--archive {
 	@include clearfix();
@@ -109,6 +11,11 @@
 		padding: 0 10px;
 		width: 33.33333%;
 		margin-bottom:$padding;
+
+		@media(max-width:600px) {
+			width:100%;
+			float:none;
+		}
 	}
 
 	.has-post-thumbnail {
@@ -171,7 +78,6 @@
 
 // author archive
 .archive.author {
-	padding-top:100px;
 
 	.posts-by {
 		text-align:center;

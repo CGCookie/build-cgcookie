@@ -1,8 +1,9 @@
 
-		</div>
+
 			</main>
 
-		</div>
+			<?php get_template_part( 'partials/post-navigation' ); ?>
+
 		<div>
 			<?php wp_footer();?>
 			<script async="" src="//platform.twitter.com/widgets.js"></script>
